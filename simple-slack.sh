@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Usage: ./slack-dark-mode.sh (see README.md for other commands)
-# Homebaked Slack Dark Mode. After executing this script restart Slack for changes to take effect.
+# Usage: ./simple-slack.sh (see README.md for other commands)
+# Simple UI for Slack. After executing this script restart Slack for changes to take effect.
 # Adopted from https://gist.github.com/a7madgamal/c2ce04dde8520f426005e5ed28da8608
 
 SLACK_DIRECT_LOCAL_SETTINGS="Library/Application\ Support/Slack/local-settings.json"
@@ -14,12 +14,10 @@ fi
 SLACK_EVENT_LISTENER="event-listener.js"
 SLACK_FILEPATH="$SLACK_RESOURCES_DIR/app.asar.unpacked/dist/ssb-interop.bundle.js"
 THEME_FILEPATH="$SLACK_RESOURCES_DIR/simple-slack.css"
-DRINKS_FILEPATH="$SLACK_RESOURCES_DIR/drinks.css"
 echo "Simplifying Slack... "
 
 # Copy CSS to Slack Folder
 sudo cp -af simple-slack.css "$THEME_FILEPATH"
-sudo cp -af drinks.css "$DRINKS_FILEPATH"
 
  # Modify Local Settings
  if [[ -f "$HOME/$SLACK_DIRECT_LOCAL_SETTINGS" ]]; then sed -i 's/"bootSonic":"[^"]*"/"bootSonic":"never"/g' "$HOME/$SLACK_DIRECT_LOCAL_SETTINGS"; fi
@@ -35,7 +33,6 @@ sudo cp -af drinks.css "$DRINKS_FILEPATH"
 
  # Insert the CSS File Location in JS
  sudo sed -i -e s@CSS_FILE_PATH@$THEME_FILEPATH@g $SLACK_FILEPATH
- sudo sed -i -e s@FOO@$DRINKS_FILEPATH@g $SLACK_FILEPATH
 
 
  # Pack the Asar Archive for Slack
