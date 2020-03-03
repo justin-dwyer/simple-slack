@@ -19,14 +19,14 @@ To use Simple Slack, you need to do some nerdy stuff, but it's really easy too. 
 First, open the *Terminal* (this is a built-in Mac application). Then copy and paste this text into the Terminal, and press `Enter`:
 
 ```
-git clone https://github.com/jonathan-palumbo/simple-slack
+git clone https://github.com/justin-dwyer/simple-slack
 cd simple-slack
 ```
 
 After you run those commands, quit the Slack application, then copy and paste this into the Terminal:
 
 ```
-./slack-dark-mode.sh
+./simple-slack.sh
 ```
 
 Then open Slack, press `ctrl+d`, and Simple Slack should work!

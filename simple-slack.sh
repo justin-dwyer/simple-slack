@@ -12,7 +12,8 @@ if [[ -d $OSX_SLACK_RESOURCES_DIR ]]; then
 fi
 
 SLACK_EVENT_LISTENER="event-listener.js"
-SLACK_FILEPATH="$SLACK_RESOURCES_DIR/app.asar.unpacked/dist/ssb-interop.bundle.js"
+# SLACK_FILEPATH="$SLACK_RESOURCES_DIR/app.asar.unpacked/dist/ssb-interop.bundle.js"
+SLACK_FILEPATH="$SLACK_RESOURCES_DIR/app.asar.unpacked/dist/main-preload-entry-point.bundle.js"
 THEME_FILEPATH="$SLACK_RESOURCES_DIR/simple-slack.css"
 echo "Simplifying Slack... "
 
