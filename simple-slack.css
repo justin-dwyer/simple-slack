@@ -40,7 +40,6 @@
 .sk-client-theme--dark .c-virtual_list__item span img.c-emoji,
 .sk-client-theme--dark .c-virtual_list__item span.c-emoji img,
 .sk-client-theme--dark .p-emoji_picker__list_item > img {
-    background: white;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: contain;
